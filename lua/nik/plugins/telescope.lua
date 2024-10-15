@@ -20,8 +20,8 @@ return {
         path_display = { "smart" },
         layout_strategy = "vertical",
         layout_config = {
-          height = 0.9,
-          width = 0.9,
+          height = 0.99,
+          width = 0.85,
           preview_cutoff = 0,
           preview_height = 7,
         },
