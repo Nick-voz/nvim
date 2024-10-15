@@ -11,7 +11,22 @@ return {
     nvimtree.setup({
       view = {
         width = 40,
+        side = "left",
         relativenumber = true,
+        float = {
+          enable = true,
+          quit_on_focus_loss = true,
+          open_win_config = {
+            relative = "editor",
+            border = "single",
+            width = 70,
+            height = 15,
+            row = 2,
+            col = 10,
+            title = "File tree",
+            title_pos = "center",
+          },
+        },
       },
       -- change folder arrow icons
       renderer = {
