@@ -32,6 +32,7 @@ return {
         "lua_ls",
         "emmet_ls",
         "ruff",
+        "pyright",
       },
     })
 
@@ -43,6 +44,7 @@ return {
         "black", -- python formatter
         "eslint_d",
         "ruff",
+        "pyright",
         "debugpy",
       },
     })
