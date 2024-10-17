@@ -13,7 +13,6 @@ return {
       local result = handle:read("*a")
       handle:close()
       local python_path = result:gsub("^%s*(.-)%s*$", "%1")
-      print(python_path)
       return python_path
     end
     require("dap-python").setup()
