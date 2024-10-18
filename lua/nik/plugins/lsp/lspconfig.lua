@@ -102,8 +102,8 @@ return {
         })
       end,
 
-      ["ruff"] = function()
-        lspconfig["ruff"].setup({
+      ["pylsp"] = function()
+        lspconfig["pylsp"].setup({
           capabilities = capabilities,
           filetypes = {
             "python",
