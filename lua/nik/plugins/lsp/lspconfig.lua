@@ -102,8 +102,8 @@ return {
         })
       end,
 
-      ["pylsp"] = function()
-        lspconfig["pylsp"].setup({
+      ["pyright"] = function()
+        lspconfig["pyright"].setup({
           capabilities = capabilities,
           filetypes = {
             "python",

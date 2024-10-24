@@ -31,7 +31,7 @@ return {
         "cssls",
         "lua_ls",
         "emmet_ls",
-        "pylsp",
+        "pyright",
       },
     })
 
@@ -43,6 +43,7 @@ return {
         "black", -- python formatter
         "eslint_d",
         "debugpy",
+        "pylint",
       },
     })
   end,
