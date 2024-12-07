@@ -6,9 +6,9 @@ return {
   },
 
   config = function()
-    -- require("neodev").setup({
-    --   library = { plugins = { "nvim-dap-ui" }, types = true },
-    -- })
+    require("neodev").setup({
+      library = { plugins = { "nvim-dap-ui" }, types = true },
+    })
     local dap = require("dap")
     local dapui = require("dapui")
     dapui.setup({
@@ -45,8 +45,12 @@ return {
         {
           elements = {
             {
+              id = "watches",
+              size = 0.5,
+            },
+            {
               id = "scopes",
-              size = 1,
+              size = 0.5,
             },
           },
           position = "left",
