@@ -23,7 +23,6 @@ return {
           height = 0.99,
           width = 0.85,
           preview_cutoff = 0,
-          preview_height = 7,
         },
         mappings = {
           i = {
