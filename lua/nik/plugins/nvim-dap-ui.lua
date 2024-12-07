@@ -124,5 +124,12 @@ return {
       ": lua require('dapui').float_element('console', { width = 75, height= 10,enter = true, position = 'center' })<cr><cr>",
       { desc = "toggle console ui" }
     )
+
+    keymap.set(
+      "n",
+      "<leader>ur",
+      ": lua require('dapui').float_element('repl', { width = 75, height= 10,enter = true, position = 'repl' })<cr><cr>",
+      { desc = "toggle repl ui" }
+    )
   end,
 }
