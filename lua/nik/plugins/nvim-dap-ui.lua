@@ -56,7 +56,11 @@ return {
           elements = {
             {
               id = "repl",
-              size = 1.0,
+              size = 0.67,
+            },
+            {
+              id = "console",
+              size = 0.33,
             },
           },
           position = "bottom",
@@ -116,13 +120,6 @@ return {
       "<leader>ub",
       ": lua require('dapui').float_element('breakpoints', { width = 75, height= 10,enter = true, position = 'center' })<cr><cr>",
       { desc = "toggle breakpoints ui" }
-    )
-
-    keymap.set(
-      "n",
-      "<leader>uc",
-      ": lua require('dapui').float_element('console', { width = 75, height= 10,enter = true, position = 'center' })<cr><cr>",
-      { desc = "toggle console ui" }
     )
 
     keymap.set(
