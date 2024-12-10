@@ -6,10 +6,10 @@ return {
     ---@type snacks.Config
     opts = {
       bigfile = { enabled = true, notify = true },
-      dashboard = { enabled = true , },
+      dashboard = { enabled = true },
       notifier = {
         enabled = true,
-        timeout = 5000,
+        timeout = 3000,
       },
       quickfile = { enabled = true },
       statuscolumn = { enabled = true },
@@ -36,13 +36,13 @@ return {
         desc = "Select Scratch Buffer",
       },
       {
-        "<leader>n",
+        "<leader>nh",
         function()
           Snacks.notifier.show_history()
         end,
         desc = "Notification History",
       },
-      
+
       {
         "<leader>cr",
         function()
@@ -72,21 +72,21 @@ return {
         desc = "Lazygit Current File History",
       },
       {
-        "<leader>gg",
+        "<leader>lg",
         function()
           Snacks.lazygit()
         end,
         desc = "Lazygit",
       },
       {
-        "<leader>gl",
+        "<leader>gh",
         function()
           Snacks.lazygit.log()
         end,
         desc = "Lazygit Log (cwd)",
       },
       {
-        "<leader>un",
+        "<leader>nd",
         function()
           Snacks.notifier.hide()
         end,
@@ -98,13 +98,6 @@ return {
           Snacks.terminal()
         end,
         desc = "Toggle Terminal",
-      },
-      {
-        "<c-_>",
-        function()
-          Snacks.terminal()
-        end,
-        desc = "which_key_ignore",
       },
       {
         "]r",
@@ -154,11 +147,11 @@ return {
           end
           vim.print = _G.dd -- Override print to use snacks for `:=` command
 
-          Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
-          Snacks.toggle.diagnostics():map("<leader>ud")
-          Snacks.toggle.line_number():map("<leader>ul")
-          Snacks.toggle.treesitter():map("<leader>uT")
-          Snacks.toggle.inlay_hints():map("<leader>uh")
+          Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uW")
+          Snacks.toggle.diagnostics():map("<leader>td")
+          Snacks.toggle.line_number():map("<leader>tln")
+          Snacks.toggle.treesitter():map("<leader>tt")
+          Snacks.toggle.inlay_hints():map("<leader>th")
         end,
       })
     end,
