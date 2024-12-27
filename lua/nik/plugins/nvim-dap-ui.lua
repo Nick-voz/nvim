@@ -46,30 +46,30 @@ return {
           elements = {
             {
               id = "watches",
-              size = 0.5,
+              size = 1,
             },
-            {
-              id = "scopes",
-              size = 0.5,
-            },
-          },
-          position = "left",
-          size = 30,
-        },
-        {
-          elements = {
-            {
-              id = "repl",
-              size = 0.67,
-            },
-            {
-              id = "console",
-              size = 0.33,
-            },
+            -- {
+            --   id = "scopes",
+            --   size = 0.5,
+            -- },
           },
           position = "bottom",
-          size = 8,
+          size = 10,
         },
+        -- {
+        --   elements = {
+        --     {
+        --       id = "repl",
+        --       size = 0.67,
+        --     },
+        --     -- {
+        --     --   id = "console",
+        --     --   size = 0.33,
+        --     -- },
+        --   },
+        --   position = "bottom",
+        --   size = 0.5,
+        -- },
       },
       mappings = {
         edit = "e",
@@ -101,36 +101,43 @@ return {
     keymap.set(
       "n",
       "<leader>us",
-      ": lua require('dapui').float_element('scopes', { width = 75, height= 10,enter = true, position = 'center' })<cr><cr>",
+      ": lua require('dapui').float_element('scopes', { width = 100, height=15, enter = true, position = 'center' })<cr><cr>",
       { desc = "toggle scopes ui" }
     )
 
     keymap.set(
       "n",
       "<leader>uS",
-      ": lua require('dapui').float_element('stacks',{ width = 75, height= 10,enter = true, position = 'center' })<cr><cr>",
+      ": lua require('dapui').float_element('stacks',{ width = 100, height=15, enter = true, position = 'center' })<cr><cr>",
       { desc = "toggle stacks ui" }
     )
 
     keymap.set(
       "n",
       "<leader>uw",
-      ": lua require('dapui').float_element('watches',{ width = 75, height= 10,enter = true, position = 'center' })<cr><cr>",
+      ": lua require('dapui').float_element('watches',{ width = 100, height=15, enter = true, position = 'center' })<cr><cr>",
       { desc = "toggle watches ui" }
     )
 
     keymap.set(
       "n",
       "<leader>ub",
-      ": lua require('dapui').float_element('breakpoints', { width = 75, height= 10,enter = true, position = 'center' })<cr><cr>",
+      ": lua require('dapui').float_element('breakpoints', { width = 100, height=15, enter = true, position = 'center' })<cr><cr>",
       { desc = "toggle breakpoints ui" }
     )
 
     keymap.set(
       "n",
       "<leader>ur",
-      ": lua require('dapui').float_element('repl', { width = 75, height= 10,enter = true, position = 'repl' })<cr><cr>",
+      ": lua require('dapui').float_element('repl', { width = 100, height=15, enter = true, position = 'repl' })<cr><cr>",
       { desc = "toggle repl ui" }
+    )
+
+    keymap.set(
+      "n",
+      "<leader>uc",
+      ": lua require('dapui').float_element('console', { width = 100, height=15, enter = true, position = 'console' })<cr><cr>",
+      { desc = "toggle console ui" }
     )
   end,
 }
