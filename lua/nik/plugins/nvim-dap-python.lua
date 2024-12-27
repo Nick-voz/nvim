@@ -35,8 +35,8 @@ return {
     )
 
     keymap.set(
-      "n",
-      "<leader>S",
+      "v",
+      "<leader>rS",
       ":lua require('dap-python').debug_selection()<cr>",
       { desc = "run test for selection through debug" }
     )
