@@ -7,3 +7,12 @@ bw
 formatter
 lua
 filename
+pylint
+lower_only
+ascii
+keys_df
+placeholder
+placeholder
+russian
+b/!
+ru
