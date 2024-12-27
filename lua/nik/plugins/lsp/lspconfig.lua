@@ -27,7 +27,7 @@ return {
 
         -- set keybinds
         opts.desc = "Show LSP references"
-        keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+        keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
         opts.desc = "Show LSP definitions"
         keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
@@ -44,7 +44,7 @@ return {
         opts.desc = "Show LSP outgoing calls"
         keymap.set("n", "gCo", "<cmd>Telescope lsp_outgoing_calls<CR>", opts) -- show lsp definitions
         opts.desc = "Show LSP document symbols"
-        keymap.set("n", "gS", "<cmd>Telescope lsp_document_symbols<CR>", opts) -- show lsp definitions
+        keymap.set("n", "gs", "<cmd>Telescope lsp_document_symbols<CR>", opts) -- show lsp definitions
 
         opts.desc = "See available code actions"
         keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
