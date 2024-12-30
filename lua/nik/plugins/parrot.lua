@@ -52,11 +52,11 @@ return {
           prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, template)
         end,
         WriteDocks = function(prt, params)
-          local chat_prompt = [[
+          local template = [[
             Generate detailed but concise documentation for this specific part of code:
             {{selection}}
 
-            Context (file type and content):
+            Context:
             ```{{filetype}}
             {{filecontent}}
             ```
@@ -94,7 +94,7 @@ return {
             Resalt MUST be just dockstnig for this specific part of code
             ]]
           local model_obj = prt.get_model("command")
-          prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, chat_prompt)
+          prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, template)
         end,
       },
     })
