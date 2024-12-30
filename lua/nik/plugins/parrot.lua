@@ -33,6 +33,24 @@ return {
           end
         end,
 
+        SpellCheck = function(prt, params)
+          local template = [[
+        Your task is to take the text provided and rewrite it into a clear,
+        grammatically correct version while preserving the original meaning
+        as closely as possible. Correct any spelling mistakes, punctuation
+        errors, verb tense issues, word choice problems, and other
+        grammatical mistakes.
+
+        After this respond just with the snippet of code that should be rewritten.
+
+        Text:
+        ```{{filetype}}
+        {{selection}}
+        ```
+        ]]
+          local model_obj = prt.get_model("command")
+          prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, template)
+        end,
         WriteDocks = function(prt, params)
           local chat_prompt = [[
             Generate detailed but concise documentation for this specific part of code:
@@ -81,6 +99,7 @@ return {
       },
     })
 
+    vim.keymap.set("n", "<leader>ps", ":PrtSpellCheck<CR>", { desc = "Spell check with parrot" })
     vim.keymap.set("v", "<leader>pd", ":PrtWriteDocks<CR>", { desc = "Generate documentation for selected symbol" })
     vim.keymap.set(
       { "n", "v", "x", "t" },
