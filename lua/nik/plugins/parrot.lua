@@ -99,7 +99,7 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>ps", ":PrtSpellCheck<CR>", { desc = "Spell check with parrot" })
+    vim.keymap.set("v", "<leader>ps", ":PrtSpellCheck<CR>", { desc = "Spell check with PrtSpellCheck" })
     vim.keymap.set("v", "<leader>pd", ":PrtWriteDocks<CR>", { desc = "Generate documentation for selected symbol" })
     vim.keymap.set(
       { "n", "v", "x", "t" },
