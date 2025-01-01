@@ -96,11 +96,43 @@ return {
           local model_obj = prt.get_model("command")
           prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, template)
         end,
+        Review = function(prt, params)
+          local template = [[
+            Please analyze the following code snippet based on the criteria provided. Your evaluation should cover aspects of logic, optimization, adherence to best coding practices, and the precision of naming conventions.
+            Code for Analysis:
+            ```{{filetype}}
+            {{selection}}
+            ```
+            Evaluation Criteria:
+            Logic and Accuracy:
+            Assess whether the code performs its intended function correctly.
+            Identify any logical errors or potential issues that may arise in edge cases.
+            Optimization:
+            Evaluate the efficiency of the code.
+            Suggest any areas where performance improvements could be made.
+            Coding Standards:
+            Check if the code adheres to typical coding standards and best practices.
+            Point out any deviations from common practices in terms of structure and syntax.
+            Naming Conventions:
+            Analyze whether class, function, and variable names are descriptive and appropriate.
+            Ensure that names are informative and reflect their roles accurately.
+            Readability and Documentation:
+            Consider the clarity and readability of the code.
+            Review if comments and documentation sufficiently explain the code's purpose and function.
+            Error Handling:
+            Examine if the code includes appropriate error handling and validation.
+            Detect any potential risks related to error management.
+            Please provide a detailed review based on these criteria.
+        ]]
+          local model_obj = prt.get_model("command")
+          prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, template)
+        end,
       },
     })
 
     vim.keymap.set("v", "<leader>ps", ":PrtSpellCheck<CR>", { desc = "Spell check with PrtSpellCheck" })
     vim.keymap.set("v", "<leader>pd", ":PrtWriteDocks<CR>", { desc = "Generate documentation for selected symbol" })
+    vim.keymap.set("v", "<leader>pR", ":PrtReview<CR>", { desc = "Review selection" })
     vim.keymap.set(
       { "n", "v", "x", "t" },
       "<C-g>m",
