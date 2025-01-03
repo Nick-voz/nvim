@@ -7,6 +7,7 @@ return {
   config = function()
     -- import nvim-autopairs
     local autopairs = require("nvim-autopairs")
+    local Rule = require("nvim-autopairs.rule")
 
     -- configure autopairs
     autopairs.setup({
@@ -17,6 +18,8 @@ return {
         java = false, -- don't check treesitter on java
       },
     })
+
+    autopairs.add_rule(Rule("```", "```"))
 
     -- import nvim-autopairs completion functionality
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
