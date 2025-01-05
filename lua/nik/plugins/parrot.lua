@@ -132,7 +132,7 @@ return {
 
     vim.keymap.set("v", "<leader>ps", ":PrtSpellCheck<CR>", { desc = "Spell check with PrtSpellCheck" })
     vim.keymap.set("v", "<leader>pd", ":PrtWriteDocks<CR>", { desc = "Generate documentation for selected symbol" })
-    vim.keymap.set("v", "<leader>pR", ":PrtReview<CR>", { desc = "Review selection" })
+    vim.keymap.set("v", "<leader>pr/sendbox/_jinja/templates", ":PrtReview<CR>", { desc = "Review selection" })
     vim.keymap.set(
       { "n", "v", "x", "t" },
       "<C-g>m",
