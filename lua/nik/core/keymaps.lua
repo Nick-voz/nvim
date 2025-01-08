@@ -30,6 +30,12 @@ keymap.set(
 keymap.set("n", "<leader>rm", "<cmd>!poetry run python main.py<CR>", { desc = "run main.py" })
 keymap.set(
   "n",
+  "<leader>rM",
+  "<cmd>terminal poetry run python main.py<CR>" .. vim.fn.getcwd() .. "<CR>",
+  { desc = "run pytest in new terminal window" }
+)
+keymap.set(
+  "n",
   "<leader>rT",
   "<cmd>terminal poetry run pytest " .. vim.fn.getcwd() .. "<CR>",
   { desc = "run pytest in new terminal window" }

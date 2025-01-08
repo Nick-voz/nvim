@@ -17,3 +17,9 @@ russian
 b/!
 ru
 jinja
+endfor
+Окей
+signUp
+signIn
+logOut
+endif
