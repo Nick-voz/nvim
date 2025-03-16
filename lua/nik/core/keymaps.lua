@@ -20,24 +20,24 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
-keymap.set("n", "<leader>rf", "<cmd>!poetry run python %<CR>", { desc = "run curent file through python" })
+keymap.set("n", "<leader>rf", "<cmd>!uv run python %<CR>", { desc = "run curent file through python" })
 keymap.set(
   "n",
   "<leader>rt",
-  "<cmd>terminal poetry run python %<CR>",
+  "<cmd>terminal uv run python %<CR>",
   { desc = "run curent file through python in new terminal window" }
 )
-keymap.set("n", "<leader>rm", "<cmd>!poetry run python main.py<CR>", { desc = "run main.py" })
+keymap.set("n", "<leader>rm", "<cmd>!uv run python main.py<CR>", { desc = "run main.py" })
 keymap.set(
   "n",
   "<leader>rM",
-  "<cmd>terminal poetry run python main.py<CR>" .. vim.fn.getcwd() .. "<CR>",
+  "<cmd>terminal uv run python main.py<CR>" .. vim.fn.getcwd() .. "<CR>",
   { desc = "run pytest in new terminal window" }
 )
 keymap.set(
   "n",
   "<leader>rT",
-  "<cmd>terminal poetry run pytest " .. vim.fn.getcwd() .. "<CR>",
+  "<cmd>terminal uv run pytest " .. vim.fn.getcwd() .. "<CR>",
   { desc = "run pytest in new terminal window" }
 )
 keymap.set("n", "<leader>ro", "<cmd>!open -a Safari %<CR><CR>", { desc = "open courent file with Safari" })
