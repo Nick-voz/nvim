@@ -127,6 +127,20 @@ return {
           local model_obj = prt.get_model("command")
           prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, template)
         end,
+        UnitTests = function(prt, params)
+          local template = [[
+        I have the following code from {{filename}}:
+
+        ```{{filetype}}
+        {{selection}}
+        ```
+
+        Please respond by writing table driven unit tests for the code above.
+        ]]
+          local model_obj = prt.get_model("command")
+          prt.logger.info("Creating unit tests for selection with model: " .. model_obj.name)
+          prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, template)
+        end,
       },
     })
 
@@ -140,4 +154,5 @@ return {
       { desc = "Create commit message with AI" }
     )
   end,
+  vim.keymap.set("v", "<leader>pt", ":PrtUnitTests<CR>", { desc = "write unit tests" }),
 }
