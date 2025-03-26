@@ -64,3 +64,4 @@ sqlite3
 str
 Args
 executescript
+tkinter
