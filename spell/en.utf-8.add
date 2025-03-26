@@ -59,3 +59,8 @@ tests
 tests
 tests
 tests
+AUTOINCREMENT
+sqlite3
+str
+Args
+executescript
