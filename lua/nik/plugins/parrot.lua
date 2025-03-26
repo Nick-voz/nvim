@@ -147,12 +147,12 @@ return {
     vim.keymap.set("v", "<leader>ps", ":PrtSpellCheck<CR>", { desc = "Spell check with PrtSpellCheck" })
     vim.keymap.set("v", "<leader>pd", ":PrtWriteDocks<CR>", { desc = "Generate documentation for selected symbol" })
     vim.keymap.set("v", "<leader>pr/sendbox/_jinja/templates", ":PrtReview<CR>", { desc = "Review selection" })
-    vim.keymap.set(
-      { "n", "v", "x", "t" },
-      "<C-g>m",
-      "<cmd>PrtCommitMsg<cr>",
-      { desc = "Create commit message with AI" }
-    )
+    vim.keymap.set({ "n", "v", "t" }, "<C-g>m", function()
+      if vim.fn.mode() == "t" then
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true), "n", false)
+      end
+      vim.cmd("PrtCommitMsg")
+    end, { desc = "Create commit message with AI" })
   end,
   vim.keymap.set("v", "<leader>pt", ":PrtUnitTests<CR>", { desc = "write unit tests" }),
 }
