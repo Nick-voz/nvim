@@ -24,7 +24,7 @@ keymap.set("n", "<leader>rf", "<cmd>!python3 %<CR>", { desc = "run curent file t
 keymap.set(
   "n",
   "<leader>rt",
-  "<cmd>terminal uv run python %<CR>",
+  "<cmd>terminal python3 %<CR>",
   { desc = "run curent file through python in new terminal window" }
 )
 keymap.set("n", "<leader>rm", "<cmd>!python3 main.py<CR>", { desc = "run main.py" })
