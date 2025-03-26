@@ -4,6 +4,7 @@ local opt = vim.opt
 
 opt.relativenumber = true
 opt.number = true
+opt.updatetime = 400
 
 -- tabs & indentation
 opt.tabstop = 4 -- 4 spaces for tabs (prettier default)
