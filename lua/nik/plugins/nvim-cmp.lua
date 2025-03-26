@@ -76,5 +76,17 @@ return {
         }),
       },
     })
+
+    vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]])
+    vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.hover()]])
+
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      focusable = false,
+      silent = true,
+    })
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      focusable = false,
+      silent = true,
+    })
   end,
 }
