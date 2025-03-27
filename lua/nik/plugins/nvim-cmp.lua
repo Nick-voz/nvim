@@ -43,6 +43,7 @@ return {
         ["<C-s>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
+
         ["<Tab>"] = function(fallback)
           if luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump() -- Jump to the next placeholder
@@ -86,7 +87,7 @@ return {
       offset_y = -1,
     })
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      focus = false,
+      focus = true,
       silent = true,
       offset_y = -1,
     })
