@@ -32,14 +32,9 @@ keymap.set(
   "n",
   "<leader>rM",
   "<cmd>terminal python3 main.py<CR>" .. vim.fn.getcwd() .. "<CR>",
-  { desc = "run pytest in new terminal window" }
+  { desc = "run main.py in new terminal window" }
 )
-keymap.set(
-  "n",
-  "<leader>rT",
-  "<cmd>terminal python3 pytest " .. vim.fn.getcwd() .. "<CR>",
-  { desc = "run pytest in new terminal window" }
-)
+keymap.set("n", "<leader>rT", "<cmd>terminal pytest<CR>", { desc = "run pytest in new terminal window" })
 keymap.set("n", "<leader>ro", "<cmd>!open -a Safari %<CR><CR>", { desc = "open courent file with Safari" })
 keymap.set("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "clear highlights" })
 
