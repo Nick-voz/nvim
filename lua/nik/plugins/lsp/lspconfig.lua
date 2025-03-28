@@ -70,6 +70,28 @@ return {
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,
+        vim.cmd([[autocmd CursorHoldI * silent! lua CallIfNotVisible(vim.lsp.buf.signature_help)]])
+    vim.cmd([[autocmd CursorHoldI * silent! lua CallIfNotVisible(vim.lsp.buf.hover)]])
+
+    function CallIfNotVisible(f)
+      if cmp.visible() then
+        return
+      else
+        f()
+      end
+    end
+
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      silent = true,
+      offset_y = -1,
+      border = "rounded",
+    })
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      silent = true,
+      offset_y = -1,
+      border = "rounded",
+    })
+
     })
 
     -- used to enable autocompletion (assign to every lsp server config)

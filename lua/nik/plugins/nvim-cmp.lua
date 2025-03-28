@@ -36,13 +36,11 @@ return {
       },
 
       mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-s>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
         ["<Tab>"] = function(fallback)
           if luasnip.expand_or_jumpable() then
@@ -64,9 +62,9 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "luasnip" }, -- snippets
-        { name = "buffer" }, -- text within current buffer
-        { name = "path" }, -- file system paths
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "path" },
       }),
 
       -- configure lspkind for vs-code like pictograms in completion menu
@@ -78,18 +76,27 @@ return {
       },
     })
 
-    vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]])
-    vim.cmd([[autocmd CursorHoldI * silent! lua vim.lsp.buf.hover()]])
+    vim.cmd([[autocmd CursorHoldI * silent! lua CallIfNotVisible(vim.lsp.buf.signature_help)]])
+
+    vim.cmd([[autocmd CursorHoldI * silent! lua CallIfNotVisible(vim.lsp.buf.hover)]])
+
+    function CallIfNotVisible(f)
+      if cmp.visible() then
+        return
+      else
+        f()
+      end
+    end
 
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      focus = false,
       silent = true,
       offset_y = -1,
+      border = "rounded",
     })
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      focus = true,
       silent = true,
       offset_y = -1,
+      border = "rounded",
     })
   end,
 }
