@@ -43,6 +43,6 @@ opt.scrolloff = 7
 
 -- Spell Check Settings
 opt.spell = true
-opt.spelllang = { "en_us" }
+opt.spelllang = { "en_us", "ru" }
 vim.cmd("highlight SpellBad ctermfg=red guifg=#FF7F7F")
 vim.opt_local.iskeyword:append({ "_", "-" })
