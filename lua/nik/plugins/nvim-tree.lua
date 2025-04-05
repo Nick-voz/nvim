@@ -57,7 +57,7 @@ return {
         custom = { ".DS_Store", "__pycache__" },
       },
       git = {
-        ignore = true,
+        ignore = false,
       },
     })
 
