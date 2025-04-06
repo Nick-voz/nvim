@@ -54,7 +54,7 @@ return {
             -- },
           },
           position = "bottom",
-          size = 10,
+          size = 15,
         },
         -- {
         --   elements = {
@@ -129,14 +129,14 @@ return {
     keymap.set(
       "n",
       "<leader>ur",
-      ": lua require('dapui').float_element('repl', { width = 100, height=15, enter = true, position = 'repl' })<cr><cr>",
+      ": lua require('dapui').float_element('repl', { width = 100, height=15, enter = true, position = 'center' })<cr><cr>",
       { desc = "toggle repl ui" }
     )
 
     keymap.set(
       "n",
       "<leader>uc",
-      ": lua require('dapui').float_element('console', { width = 100, height=15, enter = true, position = 'console' })<cr><cr>",
+      ": lua require('dapui').float_element('console', { width = 100, height=15, enter = true, position = 'center' })<cr><cr>",
       { desc = "toggle console ui" }
     )
   end,
