@@ -47,7 +47,7 @@ opt.spelllang = { "en_us", "ru" }
 vim.cmd("highlight SpellBad ctermfg=red guifg=#FF7F7F")
 vim.opt_local.iskeyword:append({ "_", "-" })
 
-vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+vim.api.nvim_create_autocmd({ "CursorMoved" }, {
   callback = function()
     local bt = vim.bo.buftype
     local ft = vim.bo.filetype
