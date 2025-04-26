@@ -36,10 +36,6 @@ return {
       },
 
       mapping = cmp.mapping.preset.insert({
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-s>"] = cmp.mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
         ["<Tab>"] = function(fallback)
@@ -74,29 +70,6 @@ return {
           ellipsis_char = "...",
         }),
       },
-    })
-
-    vim.cmd([[autocmd CursorHoldI * silent! lua CallIfNotVisible(vim.lsp.buf.signature_help)]])
-
-    vim.cmd([[autocmd CursorHoldI * silent! lua CallIfNotVisible(vim.lsp.buf.hover)]])
-
-    function CallIfNotVisible(f)
-      if cmp.visible() then
-        return
-      else
-        f()
-      end
-    end
-
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      silent = true,
-      offset_y = -1,
-      border = "rounded",
-    })
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      silent = true,
-      offset_y = -1,
-      border = "rounded",
     })
   end,
 }
