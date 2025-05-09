@@ -70,7 +70,6 @@ return {
             ["]c"] = { query = "@class.outer", desc = "Next class start" },
             ["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
             ["]l"] = { query = "@loop.outer", desc = "Next loop start" },
-            ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
             ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
             ["]a"] = { query = "@parameter.inner", desc = "Parameter next start" },
           },
