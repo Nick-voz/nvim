@@ -16,6 +16,13 @@ return {
     -- or create your custom action
 
     telescope.setup({
+      pickers = {
+        find_files = {
+          hidden = true,
+          no_ignore = true,
+        },
+      },
+
       defaults = {
         path_display = { "smart" },
         layout_strategy = "vertical",
@@ -24,6 +31,17 @@ return {
           width = 0.85,
           preview_cutoff = 0,
         },
+        file_ignore_patterns = {
+          "^.git/",
+          "^.pytest_cache",
+          "^.venv/",
+          "^venv/",
+          "%.pyc",
+          ".DS_Store",
+        },
+
+        -- Example: { "^scratch/" } -- ignore all files in scratch directory
+        -- Example: { "%.npz" } -- ignore all npz files
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
