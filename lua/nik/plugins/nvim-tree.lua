@@ -54,7 +54,7 @@ return {
         },
       },
       filters = {
-        custom = { ".DS_Store", "__pycache__" },
+        custom = { ".DS_Store", "__pycache__", ".pytest_cache" },
       },
       git = {
         ignore = false,
