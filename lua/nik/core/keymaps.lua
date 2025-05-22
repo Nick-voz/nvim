@@ -44,7 +44,6 @@ keymap.set("n", "<S-CR>", "<cmd>call append(line('.')-1, '')<CR>", { desc = "app
 keymap.set("n", "<C-CR>", "yyp$", { desc = "duplicate line down" })
 keymap.set("n", "<C-S-CR>", "yyP^", { desc = "duplicate line up" })
 
-keymap.set("n", "<leader>q", "<cmd>wq<CR>", { desc = "safe and quit" })
-keymap.set("n", "<leader>Q", "<cmd>q!<CR>", { desc = "force quit" })
+keymap.set("n", "<leader>q", "<cmd>exi<CR>", { desc = "safe and quit" })
 keymap.set("n", "<leader>wf", "<cmd>w<CR>", { desc = "write file" })
 keymap.set("n", "<leader>wa", "<cmd>w<CR>", { desc = "write all" })
