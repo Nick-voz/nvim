@@ -9,7 +9,7 @@ return {
   },
   config = function(_, opts)
     require("dap-python").resolve_python = function()
-      local handle = io.popen("poetry run which python")
+      local handle = io.popen("which python")
       local result = handle:read("*a")
       handle:close()
       local python_path = result:gsub("^%s*(.-)%s*$", "%1")
