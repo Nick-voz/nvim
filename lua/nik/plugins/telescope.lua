@@ -38,6 +38,9 @@ return {
           "^venv/",
           "%.pyc",
           ".DS_Store",
+          "^node_modules/",
+          "^.angular/*",
+          "^dist/*",
         },
 
         -- Example: { "^scratch/" } -- ignore all files in scratch directory
@@ -63,5 +66,6 @@ return {
     keymap.set("n", "<leader>ch", "<cmd>Telescope command_history<cr>", { desc = "Telescope command history" })
     keymap.set("n", "<leader>cc", "<cmd>Telescope commands<cr>", { desc = "Telescope commands" })
     keymap.set("n", "<leader>fT", "<cmd>Telescope<cr>", { desc = "Telescope" })
+    keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
   end,
 }
