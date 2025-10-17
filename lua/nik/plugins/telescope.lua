@@ -24,7 +24,7 @@ return {
       },
 
       defaults = {
-        path_display = { "smart" },
+        path_display = { "shorten" },
         layout_strategy = "vertical",
         layout_config = {
           height = 0.99,
