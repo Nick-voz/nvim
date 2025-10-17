@@ -7,9 +7,9 @@ return {
     conform.setup({
       formatters_by_ft = {
         css = { "prettier" },
-        html = { "prettier" },
+        -- html = { "prettier" },
         json = { "prettier" },
-        yaml = { "htmlbeautifier" },
+        yaml = { "prettier" },
         markdown = { "prettier" },
         lua = { "stylua" },
         python = { "isort", "black" },
@@ -29,7 +29,7 @@ return {
 
         liquid = { "prettier" },
         css = { "prettier" },
-        html = { "htmlbeautifier" },
+        -- html = { "htmlbeautifier" },
         json = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
