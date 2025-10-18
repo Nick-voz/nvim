@@ -24,7 +24,7 @@ return {
       },
 
       defaults = {
-        path_display = { "shorten" },
+        path_display = { "truncate" },
         layout_strategy = "vertical",
         layout_config = {
           height = 0.99,
