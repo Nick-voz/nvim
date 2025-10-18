@@ -28,6 +28,8 @@ return {
         "dockerfile",
         "gitignore",
         "python",
+        "javascript",
+        "angular",
       },
 
       incremental_selection = {
