@@ -35,7 +35,7 @@ keymap.set(
 )
 keymap.set("n", "<leader>rT", "<cmd>terminal pytest<CR>", { desc = "run pytest in new terminal window" })
 keymap.set("n", "<leader>ro", "<cmd>!open -a Safari %<CR><CR>", { desc = "open courent file with Safari" })
-keymap.set("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "clear highlights" })
+keymap.set("n", "<leader>hh", "<cmd>nohlsearch<CR>", { desc = "clear highlights" })
 
 keymap.set("n", "<CR>", "<cmd>call append(line('.'), '')<CR>", { desc = "apped empty line down" })
 keymap.set("n", "<S-CR>", "<cmd>call append(line('.')-1, '')<CR>", { desc = "append empty line up " })
