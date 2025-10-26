@@ -29,7 +29,6 @@ return {
         "cssls",
         "lua_ls",
         "emmet_ls",
-        "ruff",
         "pyright",
       },
     })
@@ -42,7 +41,7 @@ return {
         "black",
         "eslint_d",
         "debugpy",
-        "pylint",
+        "pyright",
         "ruff",
       },
     })
