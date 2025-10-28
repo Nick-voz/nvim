@@ -45,6 +45,7 @@ return {
         "prettier",
         "stylua",
         "isort",
+        "hadolint",
         "black",
         "eslint_d",
         "debugpy",
