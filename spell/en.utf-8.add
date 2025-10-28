@@ -123,3 +123,6 @@ unsubscriptable
 E1136
 auth
 scss
+eportMissingModuleSource
+pyright
+ui
