@@ -50,6 +50,7 @@ return {
         "eslint_d",
         "debugpy",
         "ruff",
+        "jsonlint",
       },
     })
   end,
