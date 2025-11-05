@@ -23,8 +23,8 @@ return {
         gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end, "Reset hunk")
 
-      map("n", "<leader>gS", gs.stage_buffer, "Stage buffer")
-      map("n", "<leader>gR", gs.reset_buffer, "Reset buffer")
+      -- map("n", "<leader>gS", gs.stage_buffer, "Stage buffer")
+      -- map("n", "<leader>gR", gs.reset_buffer, "Reset buffer")
 
       map("n", "<leader>gu", gs.undo_stage_hunk, "Undo stage hunk")
 
