@@ -49,7 +49,6 @@ return {
         "black",
         "eslint_d",
         "debugpy",
-        "pyright",
         "ruff",
       },
     })
