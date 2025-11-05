@@ -51,14 +51,14 @@ return {
         desc = "Rename File",
       },
       {
-        "<leader>gB",
+        "<leader>GB",
         function()
           Snacks.gitbrowse()
         end,
         desc = "Git Browse",
       },
       {
-        "<leader>gb",
+        "<leader>Gb",
         function()
           Snacks.git.blame_line()
         end,
