@@ -30,9 +30,7 @@ return {
 
       map("n", "<leader>gp", gs.preview_hunk, "Preview hunk")
 
-      map("n", "<leader>gb", function()
-        gs.blame_line({ full = true })
-      end, "Blame line")
+      map("n", "<leader>gb", gs.blame_line, "Blame line")
       map("n", "<leader>gB", gs.toggle_current_line_blame, "Toggle line blame")
 
       map("n", "<leader>gd", gs.diffthis, "Diff this")
