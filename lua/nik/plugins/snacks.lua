@@ -146,12 +146,6 @@ return {
             Snacks.debug.backtrace()
           end
           vim.print = _G.dd -- Override print to use snacks for `:=` command
-
-          Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uW")
-          Snacks.toggle.diagnostics():map("<leader>td")
-          Snacks.toggle.line_number():map("<leader>tln")
-          Snacks.toggle.treesitter():map("<leader>tt")
-          Snacks.toggle.inlay_hints():map("<leader>th")
         end,
       })
     end,
