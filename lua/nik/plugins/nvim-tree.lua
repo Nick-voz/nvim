@@ -13,6 +13,7 @@ return {
         width = 40,
         side = "left",
         relativenumber = true,
+
         float = {
           enable = true,
           quit_on_focus_loss = true,
@@ -58,6 +59,13 @@ return {
       },
       git = {
         ignore = false,
+      },
+
+      sync_root_with_cwd = true,
+      respect_buf_cwd = true,
+      update_focused_file = {
+        enable = true,
+        update_root = true,
       },
     })
 
