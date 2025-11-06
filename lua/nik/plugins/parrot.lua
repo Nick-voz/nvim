@@ -106,7 +106,7 @@ return {
           Here are the changes that should be considered by this message:
           ]] .. vim.fn.system("git diff --no-color --no-ext-diff --staged")
             local model_obj = prt.get_model("command")
-            prt.Prompt(params, prt.ui.Target.popup, model_obj, nil, template)
+            prt.Prompt(params, prt.ui.Target.append, model_obj, nil, template)
           end
         end,
 
@@ -224,12 +224,8 @@ return {
     vim.keymap.set("v", "<leader>ps", ":PrtSpellCheck<CR>", { desc = "Spell check with PrtSpellCheck" })
     vim.keymap.set("v", "<leader>pd", ":PrtWriteDocks<CR>", { desc = "Generate documentation for selected symbol" })
     vim.keymap.set("v", "<leader>pr", ":PrtReview<CR>", { desc = "Review selection" })
-    vim.keymap.set({ "n", "v", "t" }, "<C-g>m", function()
-      if vim.fn.mode() == "t" then
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true), "n", false)
-      end
-      vim.cmd("PrtCommitMsg")
-    end, { desc = "Create commit message with AI" })
+
+    vim.keymap.set({ "n", "v", "t" }, "<C-g>m", "<cmd>PrtCommitMsg<cr>", { desc = "Create commit message with AI" })
   end,
   vim.keymap.set("v", "<leader>pt", ":PrtUnitTests<CR>", { desc = "write unit tests" }),
 }
