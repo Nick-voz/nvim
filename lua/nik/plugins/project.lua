@@ -47,7 +47,8 @@ return {
       },
       opts = {},
     },
-    vim.keymap.set("n", "<leader>fp", "<cmd>NeovimProjectDiscover<cr>", { desc = "Show project list" }),
+    vim.keymap.set("n", "<leader>fP", "<cmd>NeovimProjectDiscover<cr>", { desc = "Show project list" }),
+    vim.keymap.set("n", "<leader>fp", "<cmd>NeovimProjectHistory<cr>", { desc = "Show recent projects" }),
   },
 
   init = function()
