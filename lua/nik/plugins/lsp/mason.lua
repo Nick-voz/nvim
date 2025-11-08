@@ -35,7 +35,6 @@ return {
         "prismals",
         "pyright",
         "eslint",
-        "emmet_ls",
         "angularls",
       },
     })

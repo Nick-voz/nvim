@@ -165,7 +165,7 @@ return {
 
       integrations = {
         telescope = nil,
-        diffview = nil,
+        diffview = true,
         fzf_lua = nil,
         mini_pick = nil,
         snacks = nil,
