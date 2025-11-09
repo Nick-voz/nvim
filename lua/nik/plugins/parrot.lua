@@ -225,12 +225,7 @@ return {
     vim.keymap.set("v", "<leader>pd", ":PrtWriteDocks<CR>", { desc = "Generate documentation for selected symbol" })
     vim.keymap.set("v", "<leader>pr", ":PrtReview<CR>", { desc = "Review selection" })
 
-    vim.keymap.set(
-      { "n", "v", "t", "i" },
-      "<C-g>m",
-      "<cmd>PrtCommitMsg<cr>",
-      { desc = "Create commit message with AI" }
-    )
+    vim.keymap.set({ "n", "v" }, "<leader>pm", "<cmd>PrtCommitMsg<cr>", { desc = "Create commit message with AI" })
   end,
   vim.keymap.set("v", "<leader>pt", ":PrtUnitTests<CR>", { desc = "write unit tests" }),
 }
