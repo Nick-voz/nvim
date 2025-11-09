@@ -14,8 +14,10 @@ return {
     local neogit = require("neogit")
 
     neogit.setup({
+      disable_insert_on_commit = true,
       disable_hint = true,
       kind = "floating",
+
       floating = {
         width = 0.9,
         height = 0.9,
