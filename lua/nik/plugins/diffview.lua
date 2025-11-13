@@ -8,6 +8,10 @@ return {
           disable_diagnostics = true,
           winbar_info = true,
         },
+        default = {
+          layout = "diff2_vertical",
+          winbar_info = true,
+        },
       },
       hooks = {
         view_opened = function()
