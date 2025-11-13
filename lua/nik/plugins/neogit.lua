@@ -24,7 +24,14 @@ return {
       },
     })
 
+    local neogit = require("neogit")
     local keymap = vim.keymap
     keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open neogit" })
+    keymap.set(
+      "n",
+      "<leader>pb",
+      neogit.action("branch", "checkout_local_branch"),
+      { desc = "Open neogit branch popup" }
+    )
   end,
 }
