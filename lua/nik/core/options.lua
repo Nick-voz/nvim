@@ -38,21 +38,10 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
-opt.scrolloff = 7
+opt.scrolloff = 20
 
 -- Spell Check Settings
 opt.spell = true
 opt.spelllang = { "en_us", "ru" }
 vim.cmd("highlight SpellBad ctermfg=red guifg=#FF7F7F")
 vim.opt_local.iskeyword:append({ "_", "-" })
-
-vim.api.nvim_create_autocmd({ "CursorMoved" }, {
-  callback = function()
-    local bt = vim.bo.buftype
-    local ft = vim.bo.filetype
-    if bt == "nofile" or bt == "prompt" or ft == "TelescopePrompt" then
-      return
-    end
-    vim.cmd("normal! zz")
-  end,
-})
