@@ -11,7 +11,6 @@ return {
     picker = { enabled = true },
     quickfile = { enabled = true },
     notifier = { enabled = true, timeout = 4000 },
-    scroll = {},
   },
   keys = {
     {
