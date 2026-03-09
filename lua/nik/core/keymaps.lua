@@ -34,7 +34,12 @@ keymap.set(
   { desc = "run main.py in new terminal window" }
 )
 keymap.set("n", "<leader>rT", "<cmd>terminal pytest<CR>", { desc = "run pytest in new terminal window" })
-keymap.set("n", "<leader>ro", "<cmd>!open -a Safari %<CR><CR>", { desc = "open courent file with Safari" })
+keymap.set(
+  "n",
+  "<leader>ro",
+  [[<cmd>exe "silent !firefox --new-window file://" . expand('%:p')<CR>]],
+  { desc = "open courent file with firefox" }
+)
 keymap.set("n", "<leader>hh", "<cmd>nohlsearch<CR>", { desc = "clear highlights" })
 
 keymap.set("n", "<CR>", "<cmd>call append(line('.'), '')<CR>", { desc = "apped empty line down" })
