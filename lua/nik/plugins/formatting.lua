@@ -14,6 +14,7 @@ return {
         lua = { "stylua" },
         python = { "isort", "black" },
         typescript = { "prettier" },
+        liquid = { "prettier" },
       },
 
       format_on_save = {
@@ -22,23 +23,5 @@ return {
         timeout_ms = 1000,
       },
     })
-
-    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-      conform.format({
-        lsp_fallback = true,
-        async = false,
-
-        liquid = { "prettier" },
-        css = { "prettier" },
-        -- html = { "htmlbeautifier" },
-        json = { "prettier" },
-        yaml = { "prettier" },
-        markdown = { "prettier" },
-        lua = { "stylua" },
-        python = { "isort", "black" },
-
-        timeout_ms = 1000,
-      })
-    end, { desc = "Format file or range (in visual mode)" })
   end,
 }

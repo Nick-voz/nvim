@@ -40,6 +40,7 @@ opt.swapfile = false
 
 opt.scrolloff = 20
 
+opt.syntax = "on"
 -- Spell Check Settings
 -- opt.spell = true
 -- opt.spelllang = { "en_us", "ru" }

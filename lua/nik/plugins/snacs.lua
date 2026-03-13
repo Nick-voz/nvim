@@ -7,7 +7,7 @@ return {
     dim = { enabled = true },
     dashboard = { enabled = true },
     indent = { enabled = true },
-    input = { enabled = true },
+    input = { enabled = true, prompt_pos = "title" },
     picker = { enabled = true },
     quickfile = { enabled = true },
     notifier = { enabled = true, timeout = 4000 },

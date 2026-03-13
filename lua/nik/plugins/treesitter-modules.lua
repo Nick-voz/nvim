@@ -1,5 +1,4 @@
 return {
-
   "MeanderingProgrammer/treesitter-modules.nvim",
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
@@ -23,9 +22,6 @@ return {
       ignore_install = {},
       sync_install = false,
       auto_install = true,
-      highlight = {
-        enable = true,
-      },
       incremental_selection = {
         enable = true,
         keymaps = {
