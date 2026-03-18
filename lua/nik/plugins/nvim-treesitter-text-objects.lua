@@ -141,5 +141,11 @@ return {
     -- vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
     -- vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
     -- vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "gitcommit",
+      callback = function()
+        vim.treesitter.stop() -- stop TS highlighting/injection on this buffer
+      end,
+    })
   end,
 }
