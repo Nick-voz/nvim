@@ -1,5 +1,6 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
+local vim = vim
 local opt = vim.opt
 
 opt.relativenumber = true
@@ -49,3 +50,15 @@ vim.cmd("highlight SpellBad ctermfg=red guifg=#FF7F7F")
 vim.opt_local.iskeyword:append({ "_", "-" })
 
 opt.autoread = true
+
+-- Source - https://stackoverflow.com/a/73365602
+-- Posted by lcheylus, modified by community. See post 'Timeline' for change history
+-- Retrieved 2026-04-20, License - CC BY-SA 4.0
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = "Visual",
+    })
+  end,
+})
