@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-local keymap = vim.keymap -- for conciseness
+local keymap = vim.keymap
 local vim = vim
 
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
