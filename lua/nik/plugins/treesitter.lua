@@ -17,6 +17,7 @@ return {
       "python",
       "javascript",
       "fish",
+      "bash",
     })
   end,
 }

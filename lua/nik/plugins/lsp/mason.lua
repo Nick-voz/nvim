@@ -34,6 +34,7 @@ return {
         "prismals",
         "pyright",
         "eslint",
+        "bashls",
       },
     })
 

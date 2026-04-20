@@ -19,9 +19,6 @@ return {
 
       map("n", "<leader>gb", gs.blame_line, "Blame line")
       map("n", "<leader>gB", gs.toggle_current_line_blame, "Toggle line blame")
-
-      -- Text object
-      map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
     end,
   },
 }
