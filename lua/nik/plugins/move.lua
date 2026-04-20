@@ -5,6 +5,7 @@ return {
       noremap = true,
       silent = true,
     }
+    local vim = vim
     require("move").setup({})
     vim.keymap.set("n", "<A-Up>", ":MoveLine(-1)<CR>", opts)
     vim.keymap.set("n", "<A-Down>", ":MoveLine(1)<CR>", opts)

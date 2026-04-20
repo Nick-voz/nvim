@@ -2,7 +2,7 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  ---@type snacks.Config
+
   opts = {
     dim = { enabled = true },
     dashboard = { enabled = true },
@@ -40,7 +40,6 @@ return {
     vim.api.nvim_create_autocmd("User", {
       pattern = "VeryLazy",
       callback = function()
-        -- Setup some globals for debugging (lazy-loaded)
         _G.dd = function(...)
           Snacks.debug.inspect(...)
         end
@@ -48,7 +47,6 @@ return {
           Snacks.debug.backtrace()
         end
 
-        -- Override print to use snacks for `:=` command
         if vim.fn.has("nvim-0.11") == 1 then
           vim._print = function(_, ...)
             dd(...)

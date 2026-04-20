@@ -13,8 +13,6 @@ return {
     local sorters = require("telescope.sorters")
     local transform_mod = require("telescope.actions.mt").transform_mod
 
-    -- or create your custom action
-
     telescope.setup({
       pickers = {
         find_files = {
@@ -43,20 +41,16 @@ return {
           "^dist/*",
         },
 
-        -- Example: { "^scratch/" } -- ignore all files in scratch directory
-        -- Example: { "%.npz" } -- ignore all npz files
         mappings = {
           i = {
-            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-            ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ["<C-k>"] = actions.move_selection_previous,
+            ["<C-j>"] = actions.move_selection_next,
           },
         },
       },
     })
 
-    -- telescope.load_extension("fzf")
-
-    local keymap = vim.keymap -- for conciseness
+    local keymap = vim.keymap
 
     keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
     keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })

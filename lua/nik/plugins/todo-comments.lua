@@ -4,9 +4,9 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     local todo_comments = require("todo-comments")
+    local vim = vim
 
-    -- set keymaps
-    local keymap = vim.keymap -- for conciseness
+    local keymap = vim.keymap
     keymap.set("n", "]t", function()
       todo_comments.jump_next()
     end, { desc = "Next todo comment" })
