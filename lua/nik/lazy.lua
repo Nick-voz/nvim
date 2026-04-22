@@ -17,6 +17,6 @@ require("lazy").setup({ { import = "nik.plugins" }, { import = "nik.plugins.lsp"
     notify = false,
   },
   change_detection = {
-    notify = false,
+    notify = true,
   },
 })

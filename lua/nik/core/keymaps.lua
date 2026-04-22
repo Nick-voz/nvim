@@ -41,3 +41,10 @@ keymap.set("n", "<leader>wf", "<cmd>w<CR>", { desc = "write file" })
 keymap.set("n", "<leader>wa", "<cmd>wa<CR>", { desc = "write all" })
 
 keymap.set("n", "<leader>qe", vim.diagnostic.setqflist, { desc = "Add diagnostic to quickfix list" })
+
+keymap.set({ "n", "v" }, "<leader>wq", "<C-w>q")
+keymap.set({ "n", "v" }, "<leader>wo", "<C-w>o")
+keymap.set({ "n", "v" }, "<C-up>", "<C-w><up>")
+keymap.set({ "n", "v" }, "<C-down>", "<C-w><down>")
+keymap.set({ "n", "v" }, "<C-left>", "<C-w><left>")
+keymap.set({ "n", "v" }, "<C-right>", "<C-w><right>")

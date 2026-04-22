@@ -26,8 +26,8 @@ return {
         layout_strategy = "vertical",
         sorting_strategy = "ascending",
         layout_config = {
-          height = 0.9,
-          width = 0.9,
+          height = 0.8,
+          width = 0.8,
           preview_cutoff = 0,
           prompt_position = "top",
           mirror = true,
