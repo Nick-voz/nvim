@@ -5,7 +5,7 @@ return {
     require("lualine").setup({
       sections = {
         lualine_a = { "mode" },
-        lualine_b = { "filename", "searchcount", "selectioncount" },
+        lualine_b = { "filename", "selectioncount" },
         lualine_c = { "lsp_status" },
         lualine_x = { "filetype", "encoding", "branch", "diff" },
         lualine_y = { "progress" },

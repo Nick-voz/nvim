@@ -18,13 +18,21 @@ return {
       kind = "floating",
 
       floating = {
-        width = 0.9,
-        height = 0.9,
-        row = 1,
+        width = 0.8,
+        height = 0.8,
+        row = 2,
       },
+
+      commit_editor = { kind = "floating" },
+      commit_select_view = { kind = "floating" },
+      commit_view = { kind = "tab" },
+      log_view = { kind = "floating" },
+      reflog_view = { kind = "floating" },
+      stash = { kind = "floating" },
+      refs_view = { kind = "floating" },
+      popup = { kind = "floating" },
     })
 
-    local neogit = require("neogit")
     local keymap = vim.keymap
     keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open neogit" })
     keymap.set("n", "<leader>gl", neogit.action("log", "log_current"), { desc = "Open neogit" })
