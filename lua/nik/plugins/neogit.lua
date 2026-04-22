@@ -23,14 +23,14 @@ return {
         row = 2,
       },
 
-      commit_editor = { kind = "floating" },
-      commit_select_view = { kind = "floating" },
+      commit_editor = { kind = "tab" },
+      commit_select_view = { kind = "tab" },
       commit_view = { kind = "tab" },
-      log_view = { kind = "floating" },
-      reflog_view = { kind = "floating" },
-      stash = { kind = "floating" },
-      refs_view = { kind = "floating" },
-      popup = { kind = "floating" },
+      log_view = { kind = "tab" },
+      reflog_view = { kind = "tab" },
+      stash = { kind = "tab" },
+      refs_view = { kind = "tab" },
+      popup = { kind = "tab" },
     })
 
     local keymap = vim.keymap
