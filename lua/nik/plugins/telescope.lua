@@ -8,11 +8,14 @@ return {
     "folke/todo-comments.nvim",
   },
   config = function()
+    local todo_comments = require("todo-comments")
+
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local sorters = require("telescope.sorters")
     local transform_mod = require("telescope.actions.mt").transform_mod
 
+    todo_comments.setup()
     telescope.setup({
       pickers = {
         find_files = {
