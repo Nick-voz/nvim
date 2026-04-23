@@ -7,10 +7,6 @@ return {
     { "folke/neodev.nvim", opts = {} },
   },
   config = function()
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-    local vim = vim
-    local buf = buf
     local keymap = vim.keymap -- for conciseness
 
     vim.api.nvim_create_autocmd("LspAttach", {
