@@ -7,28 +7,31 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
-    local gheight = vim.api.nvim_list_uis()[1].height
-    local gwidth = vim.api.nvim_list_uis()[1].width
     local width = 100
     local height = 20
 
     nvimtree.setup({
       view = {
         relativenumber = true,
-
         float = {
           enable = true,
           quit_on_focus_loss = true,
-          open_win_config = {
-            relative = "editor",
-            border = "rounded",
-            width = width,
-            height = height,
-            row = (gheight - height) * 0.3,
-            col = (gwidth - width) * 0.5,
-            title = "File tree",
-            title_pos = "center",
-          },
+          open_win_config = function()
+            local screen = vim.api.nvim_list_uis()[1]
+            local gheight = screen.height
+            local gwidth = screen.width
+
+            return {
+              relative = "editor",
+              border = "rounded",
+              width = width,
+              height = height,
+              row = (gheight - height) * 0.3,
+              col = (gwidth - width) * 0.5,
+              title = "File tree",
+              title_pos = "center",
+            }
+          end,
         },
       },
       renderer = {
@@ -58,7 +61,6 @@ return {
       git = {
         ignore = false,
       },
-
       sync_root_with_cwd = true,
       respect_buf_cwd = true,
       update_focused_file = {
