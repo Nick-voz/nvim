@@ -10,6 +10,7 @@ return {
         set_jumps = true,
       },
     })
+
     local keymaps = {
       ["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
       ["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
@@ -45,6 +46,7 @@ return {
       ["ac"] = { query = "@class.outer", desc = "Select outer part of a class" },
       ["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },
     }
+
     for k, p in pairs(keymaps) do
       vim.keymap.set({ "x", "o" }, k, function()
         require("nvim-treesitter-textobjects.select").select_textobject(p.query, "textobjects")
@@ -63,6 +65,7 @@ return {
         ["<leader>pm"] = { query = "@function.outer", desc = "swap function with previous" },
       },
     }
+
     for k, p in pairs(swap.swap_next) do
       vim.keymap.set("n", k, function()
         require("nvim-treesitter-textobjects.swap").swap_next(p.query)
@@ -109,6 +112,7 @@ return {
         ["[A"] = { query = "@parameter.inner", desc = "Parameter previous end" },
       },
     }
+
     for k, p in pairs(move.goto_next_start) do
       vim.keymap.set({ "n", "x", "o" }, k, function()
         require("nvim-treesitter-textobjects.move").goto_next_start(p.query, "textobjects")
@@ -131,15 +135,7 @@ return {
     end
 
     local ts_repeat_move = require("nvim-treesitter-textobjects.repeatable_move")
-
     vim.keymap.set({ "n", "x", "o" }, "<A-;>", ts_repeat_move.repeat_last_move)
     vim.keymap.set({ "n", "x", "o" }, "<A-,>", ts_repeat_move.repeat_last_move_opposite)
-
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = "gitcommit",
-      callback = function()
-        vim.treesitter.stop()
-      end,
-    })
   end,
 }

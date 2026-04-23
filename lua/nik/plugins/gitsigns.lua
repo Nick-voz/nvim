@@ -1,3 +1,4 @@
+---@diagnostic disable: need-check-nil
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },

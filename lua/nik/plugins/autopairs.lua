@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 return {
   "windwp/nvim-autopairs",
   event = { "InsertEnter" },

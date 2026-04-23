@@ -17,11 +17,7 @@ return {
       disable_hint = true,
       kind = "floating",
 
-      floating = {
-        width = 0.8,
-        height = 0.8,
-        row = 2,
-      },
+      floating = { width = 0.8, height = 0.8, row = 2 },
 
       commit_editor = { kind = "tab" },
       commit_select_view = { kind = "tab" },
@@ -36,11 +32,6 @@ return {
     local keymap = vim.keymap
     keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open neogit" })
     keymap.set("n", "<leader>gl", neogit.action("log", "log_current"), { desc = "Open neogit" })
-    keymap.set(
-      "n",
-      "<leader>pb",
-      neogit.action("branch", "checkout_local_branch"),
-      { desc = "Open neogit branch popup" }
-    )
+    keymap.set("n", "<leader>pb", neogit.action("branch", "checkout_local_branch"), { desc = "Open branch popup" })
   end,
 }
