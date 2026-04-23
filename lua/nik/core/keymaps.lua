@@ -48,3 +48,8 @@ keymap.set({ "n", "v" }, "<C-up>", "<C-w><up>")
 keymap.set({ "n", "v" }, "<C-down>", "<C-w><down>")
 keymap.set({ "n", "v" }, "<C-left>", "<C-w><left>")
 keymap.set({ "n", "v" }, "<C-right>", "<C-w><right>")
+
+vim.keymap.set("n", "<A-Up>", ":m -2<CR>==", { silent = true })
+vim.keymap.set("n", "<A-Down>", ":m +1<CR>==", { silent = true })
+vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>==gv", { silent = true })
+vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>==gv", { silent = true })
