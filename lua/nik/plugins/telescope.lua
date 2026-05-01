@@ -47,8 +47,8 @@ return {
 
         mappings = {
           i = {
-            ["<C-k>"] = actions.move_selection_previous,
-            ["<C-j>"] = actions.move_selection_next,
+            ["<C-p>"] = actions.move_selection_previous,
+            ["<C-n>"] = actions.move_selection_next,
             ["<C-q>"] = require("trouble.sources.telescope").open,
           },
         },
