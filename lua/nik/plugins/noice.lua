@@ -183,14 +183,9 @@ return {
       },
 
       routes = {
-        {
-          { filter = { event = "msg_showmode" }, view = "notify" },
-          filter = { event = "msg_show", kind = "shell_out" },
-          view = "popup",
-          opts = { title = "Shell out", render = "compact" },
-        },
-        { filter = { event = "msg_show", kind = "shell_cmd" }, view = "notify", opts = { replace = true } },
-        { filter = { event = "msg_show", kind = "shell_err" }, view = "notify" },
+        { filter = { event = "msg_show", kind = "shell_out" }, view = "popup" },
+        { filter = { event = "msg_showmode" }, view = "notify" },
+        { filter = { event = "msg_show" }, view = "notify" },
       },
       status = {},
       format = {},
