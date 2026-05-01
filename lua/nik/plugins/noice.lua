@@ -186,7 +186,7 @@ return {
         { filter = { event = "msg_show", kind = "shell_out" }, view = "popup" },
         -- TODU: add recording mode display
         {
-          filter = { event = "msg_show", ["not"] = { kind = "undo" } },
+          filter = { event = "msg_show", ["not"] = { kind = { "undo", "confirm" } } },
           view = "notify",
           opts = { replace = true },
         },
