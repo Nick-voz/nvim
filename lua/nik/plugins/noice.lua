@@ -184,7 +184,7 @@ return {
 
       routes = {
         { filter = { event = "msg_show", kind = "shell_out" }, view = "popup" },
-        { filter = { event = "msg_showmode" }, view = "notify" },
+        -- TODU: add recording mode display
         {
           filter = { event = "msg_show", ["not"] = { kind = "undo" } },
           view = "notify",
