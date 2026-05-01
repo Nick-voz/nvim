@@ -185,7 +185,11 @@ return {
       routes = {
         { filter = { event = "msg_show", kind = "shell_out" }, view = "popup" },
         { filter = { event = "msg_showmode" }, view = "notify" },
-        { filter = { event = "msg_show" }, view = "notify" },
+        {
+          filter = { event = "msg_show", ["not"] = { kind = "undo" } },
+          view = "notify",
+          opts = { replace = true },
+        },
       },
       status = {},
       format = {},
