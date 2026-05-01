@@ -15,9 +15,7 @@ return {
 
     neogit.setup({
       disable_hint = true,
-      kind = "floating",
-
-      floating = { width = 0.8, height = 0.8, row = 2 },
+      kind = "tab",
 
       commit_editor = { kind = "tab" },
       commit_select_view = { kind = "tab" },
