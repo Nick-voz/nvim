@@ -32,7 +32,7 @@ return {
         "lua_ls",
         "graphql",
         "prismals",
-        "pyright",
+        "ty",
         "eslint",
         "bashls",
       },

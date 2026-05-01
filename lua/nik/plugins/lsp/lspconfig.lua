@@ -10,6 +10,11 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client and client.name == "ruff" then
+          client.server_capabilities.hoverProvider = false
+        end
+
         local keymap = vim.keymap.set
         local function opts(desc)
           return { buffer = ev.buf, silent = true, desc = desc }
