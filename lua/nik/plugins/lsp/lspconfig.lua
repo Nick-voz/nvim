@@ -25,7 +25,7 @@ return {
           { "n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions" },
           { "n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", "Show LSP type definitions" },
           { "n", "gi", "<cmd>Telescope lsp_implementations<CR>", "Show LSP implementations" },
-          { "n", "gc", "<cmd>Telescope lsp_incoming_calls<CR>", "Show LSP incoming calls" },
+          { "n", "gI", "<cmd>Telescope lsp_incoming_calls<CR>", "Show LSP incoming calls" },
           { "n", "gC", "<cmd>Telescope lsp_outgoing_calls<CR>", "Show LSP outgoing calls" },
           { "n", "gs", "<cmd>Telescope lsp_document_symbols<CR>", "Show LSP document symbols" },
           { "n", "gS", "<cmd>Telescope lsp_workspace_symbols<CR>", "Show LSP workspace symbols" },
