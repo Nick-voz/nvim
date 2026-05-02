@@ -9,23 +9,16 @@ return {
   config = function()
     require("noice").setup({
       cmdline = {
-        enabled = true,
-        view = "cmdline_popup",
-        opts = {},
-
         format = {
-          cmdline = { pattern = "^:", icon = ":", lang = "vim" },
-          search_down = { kind = "search", pattern = "^/", icon = "/", lang = "regex" },
-          search_up = { kind = "search", pattern = "^%?", icon = "?", lang = "regex" },
-          filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
-          lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-          help = { pattern = "^:%s*he?l?p?%s+", icon = "H" },
-          input = { view = "cmdline_input", icon = "I" },
+          cmdline = { icon = ":" },
+          search_down = { icon = "/" },
+          search_up = { icon = "?" },
+          filter = { icon = "$" },
+          help = { icon = "H" },
+          input = { icon = "I" },
         },
       },
 
-      redirect = { view = "popup", filter = { event = "msg_show" } },
-      notify = { enabled = true, view = "notify" },
       commands = { history = { view = "popup" } },
 
       lsp = {
@@ -38,21 +31,13 @@ return {
         hover = { silent = true },
       },
 
-      health = { checker = true },
-
       presets = {
         command_palette = true,
         long_message_to_split = true,
-        inc_rename = false,
         lsp_doc_border = true,
       },
-      throttle = 1000 / 30,
 
-      views = {
-        split = {
-          size = "auto",
-        },
-      },
+      views = { split = { size = "auto" } },
 
       routes = {
         { filter = { event = "msg_show", kind = "shell_out" }, view = "popup" },
