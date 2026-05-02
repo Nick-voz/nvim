@@ -26,6 +26,7 @@ return {
 
       redirect = { view = "popup", filter = { event = "msg_show" } },
       notify = { enabled = true, view = "notify" },
+      commands = { history = { view = "popup" } },
 
       lsp = {
         override = {
