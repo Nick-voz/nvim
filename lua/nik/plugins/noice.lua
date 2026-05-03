@@ -59,25 +59,15 @@ return {
     local keymap = vim.keymap
     local noice = require("noice")
 
-    keymap.set("n", "<leader>nh", function()
-      noice.cmd("history")
-    end, { desc = "Show notifications history" })
-    keymap.set("n", "<leader>nl", function()
-      noice.cmd("last")
-    end, { desc = "Show last notification" })
+    keymap.set("n", "<leader>nh", function() noice.cmd("history") end, { desc = "Show notifications history" })
+    keymap.set("n", "<leader>nl", function() noice.cmd("last") end, { desc = "Show last notification" })
 
     vim.keymap.set({ "n", "i", "s" }, "<c-f>", function()
-      if not require("noice.lsp").scroll(4) then
-        return "<c-f>"
-      end
+      if not require("noice.lsp").scroll(4) then return "<c-f>" end
     end, { silent = true, expr = true })
     vim.keymap.set({ "n", "i", "s" }, "<c-b>", function()
-      if not require("noice.lsp").scroll(-4) then
-        return "<c-b>"
-      end
+      if not require("noice.lsp").scroll(-4) then return "<c-b>" end
     end, { silent = true, expr = true })
-    vim.keymap.set("c", "<S-Enter>", function()
-      require("noice").redirect(vim.fn.getcmdline())
-    end, { desc = "Redirect Cmdline" })
+    vim.keymap.set("c", "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, { desc = "Redirect Cmdline" })
   end,
 }

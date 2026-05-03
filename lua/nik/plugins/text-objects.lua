@@ -48,9 +48,12 @@ return {
     }
 
     for k, p in pairs(keymaps) do
-      vim.keymap.set({ "x", "o" }, k, function()
-        require("nvim-treesitter-textobjects.select").select_textobject(p.query, "textobjects")
-      end, { desc = p.desc })
+      vim.keymap.set(
+        { "x", "o" },
+        k,
+        function() require("nvim-treesitter-textobjects.select").select_textobject(p.query, "textobjects") end,
+        { desc = p.desc }
+      )
     end
 
     local swap = {
@@ -67,14 +70,10 @@ return {
     }
 
     for k, p in pairs(swap.swap_next) do
-      vim.keymap.set("n", k, function()
-        require("nvim-treesitter-textobjects.swap").swap_next(p.query)
-      end, { desc = p.desc })
+      vim.keymap.set("n", k, function() require("nvim-treesitter-textobjects.swap").swap_next(p.query) end, { desc = p.desc })
     end
     for k, p in pairs(swap.swap_previous) do
-      vim.keymap.set("n", k, function()
-        require("nvim-treesitter-textobjects.swap").swap_previous(p.query)
-      end, { desc = p.desc })
+      vim.keymap.set("n", k, function() require("nvim-treesitter-textobjects.swap").swap_previous(p.query) end, { desc = p.desc })
     end
 
     local move = {
@@ -114,24 +113,36 @@ return {
     }
 
     for k, p in pairs(move.goto_next_start) do
-      vim.keymap.set({ "n", "x", "o" }, k, function()
-        require("nvim-treesitter-textobjects.move").goto_next_start(p.query, "textobjects")
-      end, { desc = p.desc })
+      vim.keymap.set(
+        { "n", "x", "o" },
+        k,
+        function() require("nvim-treesitter-textobjects.move").goto_next_start(p.query, "textobjects") end,
+        { desc = p.desc }
+      )
     end
     for k, p in pairs(move.goto_next_end) do
-      vim.keymap.set({ "n", "x", "o" }, k, function()
-        require("nvim-treesitter-textobjects.move").goto_next_end(p.query, "textobjects")
-      end, { desc = p.desc })
+      vim.keymap.set(
+        { "n", "x", "o" },
+        k,
+        function() require("nvim-treesitter-textobjects.move").goto_next_end(p.query, "textobjects") end,
+        { desc = p.desc }
+      )
     end
     for k, p in pairs(move.goto_previous_start) do
-      vim.keymap.set({ "n", "x", "o" }, k, function()
-        require("nvim-treesitter-textobjects.move").goto_previous_start(p.query, "textobjects")
-      end, { desc = p.desc })
+      vim.keymap.set(
+        { "n", "x", "o" },
+        k,
+        function() require("nvim-treesitter-textobjects.move").goto_previous_start(p.query, "textobjects") end,
+        { desc = p.desc }
+      )
     end
     for k, p in pairs(move.goto_previous_end) do
-      vim.keymap.set({ "n", "x", "o" }, k, function()
-        require("nvim-treesitter-textobjects.move").goto_previous_end(p.query, "textobjects")
-      end, { desc = p.desc })
+      vim.keymap.set(
+        { "n", "x", "o" },
+        k,
+        function() require("nvim-treesitter-textobjects.move").goto_previous_end(p.query, "textobjects") end,
+        { desc = p.desc }
+      )
     end
 
     local ts_repeat_move = require("nvim-treesitter-textobjects.repeatable_move")
