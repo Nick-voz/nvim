@@ -18,10 +18,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.treesitter.stop()
   end,
 })
-
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function(_)
-    vim.cmd("NvimTreeFindFileToggle")
-    vim.cmd("NvimTreeFindFileToggle")
-  end,
-})
