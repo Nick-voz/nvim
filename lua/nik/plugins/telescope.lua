@@ -64,5 +64,6 @@ return {
     keymap.set("n", "<leader>cc", "<cmd>Telescope commands<cr>", { desc = "Telescope commands" })
     keymap.set("n", "<leader>fT", "<cmd>Telescope<cr>", { desc = "Telescope" })
     keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
+    keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Find help tags" })
   end,
 }
