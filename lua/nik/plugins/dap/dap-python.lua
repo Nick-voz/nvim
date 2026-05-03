@@ -20,25 +20,8 @@ return {
 
     local keymap = vim.keymap
 
-    keymap.set(
-      "n",
-      "<leader>dm",
-      ":lua require('dap-python').test_method()<cr>",
-      { desc = "run test for next method through debug" }
-    )
-
-    keymap.set(
-      "n",
-      "<leader>dC",
-      ":lua require('dap-python').test_class()<cr>",
-      { desc = "run test for class through debug" }
-    )
-
-    keymap.set(
-      "v",
-      "<leader>rS",
-      ":lua require('dap-python').debug_selection()<cr>",
-      { desc = "run test for selection through debug" }
-    )
+    keymap.set("n", "<leader>dm", ":lua require('dap-python').test_method()<cr>", { desc = "run test for next method through debug" })
+    keymap.set("n", "<leader>dC", ":lua require('dap-python').test_class()<cr>", { desc = "run test for class through debug" })
+    keymap.set("v", "<leader>rS", ":lua require('dap-python').debug_selection()<cr>", { desc = "run test for selection through debug" })
   end,
 }
